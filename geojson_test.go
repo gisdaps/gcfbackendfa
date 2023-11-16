@@ -16,17 +16,17 @@ import (
 //}
 
 func TestGeneratePaseto(t *testing.T) {
-	//privateKey, publicKey := watoken.GenerateKey()
-	//fmt.Println(privateKey)
-	//fmt.Println(publicKey)
-	hasil, err := watoken.Encode("iyas", "PrivateKey")
+	privateKey, publicKey := watoken.GenerateKey()
+	fmt.Println(privateKey)
+	fmt.Println(publicKey)
+	hasil, err := watoken.Encode("gis5", "PrivateKey")
 	fmt.Println(hasil, err)
 }
 
 func TestUpdateData(t *testing.T) {
 	data := LonLatProperties{
 		Type:   "Polygon",
-		Name:   "lodons",
+		Name:   "Martabak Manis",
 		Volume: "1",
 	}
 	up := UpdateNameGeo("MONGOSTRING", "gis4", context.Background(), data)
@@ -36,7 +36,7 @@ func TestUpdateData(t *testing.T) {
 func TestDeleteDataGeo(t *testing.T) {
 	data := LonLatProperties{
 		Type:   "Polygon",
-		Name:   "lodons",
+		Name:   "Martabak Manis",
 		Volume: "1",
 	}
 	up := DeleteDataGeo("MONGOSTRING", "gis4", context.Background(), data)
